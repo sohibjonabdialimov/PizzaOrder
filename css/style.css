@@ -1,0 +1,318 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;500;600;700;800;900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+body {
+  font-family: "Fira Sans", sans-serif;
+  background-color: #fff;
+  color: #222;
+}
+
+.container {
+  border-radius: 10px;
+  box-shadow: 20px 20px 20px #00000050;
+  width: 42%;
+  position: fixed;
+  top: 10px;
+  bottom: 15px;
+  left: 20px;
+  margin: 0 auto;
+  padding: 20px 50px;
+  background-color: lightblue;
+  border: 1px solid #878787;
+}
+.pizza-content h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#username,
+#phoneNumber,
+#address {
+  width: 100%;
+  padding: 12px 20px;
+  font-size: 18px;
+  display: block;
+  margin: 10px auto;
+  border-radius: 15px;
+  border: none;
+  box-shadow: 5px 5px 15px #0000008d;
+  outline: none;
+  color: #222;
+  font-weight: 500;
+}
+.select-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 15px 0 10px 0;
+}
+.select-form {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  justify-content: space-between;
+}
+.select-form label {
+  width: 40%;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+.select-form select {
+  width: 40%;
+  padding: 10px 25px;
+  font-weight: 500;
+  font-size: 18px;
+  outline: none;
+}
+.radio-size {
+  margin-top: 20px;
+  font-size: 20px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+.radio-size input {
+  width: 45px;
+  height: 45px;
+  position: relative;
+}
+.radio-size input:first-child:after {
+  content: "25sm";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.radio-size input:nth-child(2)::after {
+  content: "30sm";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.radio-size input:last-child:after {
+  content: "35sm";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.pizza-products {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+.pizza-menu {
+  margin: 20px 0;
+}
+.pizza-menu h3 {
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+.pizzaSize {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 50%;
+  font-size: 14px;
+}
+.pizzaSize1 {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 50%;
+  font-size: 14px;
+}
+.pizzaSize.active {
+  background-color: yellowgreen;
+}
+.pizzaSize1.active {
+  background-color: yellowgreen;
+}
+.products-item,
+.extra-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 5px 0;
+}
+.products-item label,
+.extra-item label {
+  font-size: 18px;
+}
+.products-item input,
+.extra-item input {
+  width: 20px;
+  height: 20px;
+}
+
+.extra-products h3 {
+  margin-bottom: 10px;
+  font-size: 18px;
+  padding-left: 20px;
+}
+.extra-section {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.btn {
+  display: block;
+  padding: 5px 50px;
+  margin: 20px auto;
+  font-size: 17px;
+  font-weight: 600;
+  background-color: #fff;
+  outline: none;
+  cursor: pointer;
+}
+.btn:hover {
+  cursor: pointer;
+}
+
+/* menu section */
+
+.menuPizza {
+  width: 50%;
+  position: absolute;
+  right: 20px;
+  top: 65px;
+}
+.menu-header{
+  width: 50%;
+  font-size: 35px;
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  text-align: center;
+  color: #f6091d;
+  text-shadow: 2px 2px #f609b3;
+}
+.menu-content {
+  position: relative;
+  padding: 15px;
+  border: 3px solid #888;
+  box-shadow: 10px 10px 15px #0000004a;
+  margin-bottom: 20px;
+  border-radius: 10px;
+}
+/* Modal */
+.modal {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  backdrop-filter: blur(1px);
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.modal-content {
+  border-radius: 10px;
+  position: relative;
+  background-color: rgb(240, 232, 240);
+  color: #393535;
+  width: 45%;
+  padding: 15px 50px;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5);
+  animation: anim 0.5s ease-in-out;
+}
+
+@keyframes anim {
+  0% {
+    transform: translateY(-200px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+.modal-info h1 {
+  margin-bottom: 10px;
+}
+
+.form-info,
+.pizza-info {
+  border-bottom: 2px solid #555;
+  margin-bottom: 15px;
+  padding: 10px 0;
+}
+.form-info span,
+.pizza-info span {
+  display: block;
+  font-weight: 600;
+}
+.pizza-info p:nth-child(3) span {
+  width: 130px;
+}
+.form-info p,
+.pizza-info p {
+  display: flex;
+  gap: 20px;
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+.total {
+  display: flex;
+  justify-content: end;
+  margin: 20px 0;
+  margin-right: 80px;
+}
+.total h3 {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  font-size: 22px;
+  letter-spacing: 1.5px;
+}
+#close {
+  width: 30px;
+  height: 30px;
+  object-fit: cover;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+#edit {
+  width: 20px;
+  height: 20px;
+  object-fit: cover;
+  position: absolute;
+  right: 35px;
+  top: 4px;
+}
+#editForm > input {
+  display: block;
+  width: 70%;
+  padding: 15px;
+  margin: 15px auto;
+  border-radius: 15px;
+  border: none;
+  box-shadow: 5px 5px 10px #00000088;
+  outline: none;
+  color: #222;
+  font-size: 16px;
+}
+#editThickness {
+  border-radius: 10px;
+}
+#editThickness:focus {
+  border-radius: 10px;
+}

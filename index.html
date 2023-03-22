@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pizza Order</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+  <div class="container">
+    <div class="pizza-content">
+      <h1>Pizza Order</h1>
+      <form id="form">
+        <input required type="text" id="username" placeholder="User name" value="Palonchiyev Pistonchi">
+        <input required type="input" name="" id="phoneNumber" value="+99890 111 11 11" placeholder="Phone number">
+        <input required type="text" name="" value="Chilonzor t. Al-Xorazmiy, Lutfiy ko'chasi-56" id="address"
+          placeholder="User address">
+
+        <div class="select-form">
+          <label for="thickness">Dough thickness: </label>
+          <select name="" id="thickness">
+            <option value="none">none</option>
+            <option value="Thin">Thin</option>
+            <option value="Medium">Medium</option>
+            <option value="Thick">Thick</option>
+          </select>
+        </div>
+        <div class="radio-size">
+          Size:
+
+          <div class="pizzaSize active" id="25sm">25sm</div>
+          <div class="pizzaSize" id="30sm">30sm</div>
+          <div class="pizzaSize" id="35sm">35sm</div>
+        </div>
+
+        <div class="pizza-menu">
+          <h3>On Pizza: </h3>
+          <div class="pizza-products">
+            <div class="products-item">
+              <input type="checkbox" class="products-check" name="" id="tomato" value="Tomato">
+              <label for="tomato">Tomato</label>
+            </div>
+            <div class="products-item">
+              <input type="checkbox" class="products-check" name="" id="cucumber" value="Picked cucumber">
+              <label for="cucumber">Picked cucumber</label>
+            </div>
+            <div class="products-item">
+              <input type="checkbox" class="products-check" name="" id="turkey" value="Turkey meat">
+              <label for="turkey">Turkey meat</label>
+            </div>
+            <div class="products-item">
+              <input type="checkbox" class="products-check" name="" id="mushroom" value="Mushroom">
+              <label for="mushroom">Mushroom</label>
+            </div>
+
+            <div class="products-item">
+              <input type="checkbox" class="products-check" name="" id="olive" value="Olive">
+              <label for="olive">Olive</label>
+            </div>
+            <div class="products-item">
+              <input type="checkbox" class="products-check" name="" id="horse" value="Horse meat">
+              <label for="horse">Horse meat</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="extra-products">
+          <h3>Add: </h3>
+          <div class="extra-section">
+            <div class="extra-item">
+              <input type="checkbox" class="extra-check" name="" id="pepper" value="Pepper">
+              <label for="pepper">Pepper</label>
+            </div>
+            <div class="extra-item">
+              <input type="checkbox" class="extra-check" name="" id="sausages" value="Sausages">
+              <label for="sausages">Sausages</label>
+            </div>
+          </div>
+        </div>
+
+        <button type="submit" class="btn">Save</button>
+      </form>
+    </div>
+  </div>
+
+  <h1 class="menu-header">Sizning buyurtmalaringiz</h1>
+  <div class="menuPizza"></div>
+
+  <div class="modal" id="modal">
+    <div class="modal-content" id="modalContent">
+      <form id="editForm">
+        <input required type="text" id="editUsername">
+        <input required type="input" id="editPhoneNumber">
+        <input required type="text" name="" id="editAddress">
+
+        <div class="select-form">
+          <label for="editThickness">Dough thickness: </label>
+          <select name="" id="editThickness">
+            <option value="none">none</option>
+            <option value="Thin">Thin</option>
+            <option value="Medium">Medium</option>
+            <option value="Thick">Thick</option>
+          </select>
+        </div>
+        <div class="radio-size">
+          Size:
+
+          <div class="pizzaSize1" data-id="25sm">25sm</div>
+          <div class="pizzaSize1" data-id="30sm">30sm</div>
+          <div class="pizzaSize1" data-id="35sm">35sm</div>
+        </div>
+
+        <div class="pizza-menu">
+          <h3>On Pizza: </h3>
+          <div class="pizza-products">
+            <div class="products-item">
+              <input type="checkbox" class="products-check1" id="tomato" value="Tomato">
+              <label for="tomato">Tomato</label>
+            </div>
+            <div class="products-item">
+              <input type="checkbox" class="products-check1" id="cucumber" value="Picked cucumber">
+              <label for="cucumber">Picked cucumber</label>
+            </div>
+            <div class="products-item">
+              <input type="checkbox" class="products-check1" id="turkey" value="Turkey meat">
+              <label for="turkey">Turkey meat</label>
+            </div>
+            <div class="products-item">
+              <input type="checkbox" class="products-check1" id="mushroom" value="Mushroom">
+              <label for="mushroom">Mushroom</label>
+            </div>
+
+            <div class="products-item">
+              <input type="checkbox" class="products-check1" id="olive" value="Olive">
+              <label for="olive">Olive</label>
+            </div>
+            <div class="products-item">
+              <input type="checkbox" class="products-check1" id="horse" value="Horse meat">
+              <label for="horse">Horse meat</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="extra-products">
+          <h3>Add: </h3>
+          <div class="extra-section">
+            <div class="extra-item">
+              <input type="checkbox" class="extra-check1" name="" id="pepper" value="Pepper">
+              <label for="pepper">Pepper</label>
+            </div>
+            <div class="extra-item">
+              <input type="checkbox" class="extra-check1" name="" id="sausages" value="Sausages">
+              <label for="sausages">Sausages</label>
+            </div>
+          </div>
+        </div>
+        <button type="submit" class="btn">Save</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+
+</html>
