@@ -19,14 +19,17 @@ const extraCheck1 = document.querySelectorAll(".extra-check1");
 const thickness = document.querySelector("#thickness");
 const editThickness = document.querySelector("#editThickness");
 const menuPizza = document.querySelector(".menuPizza");
+let overallPizzas = JSON.parse(localStorage.getItem('overallPizzas')) || [];
 let pizzaSizeValue = "25sm";
 let pizzaEditSizeValue;
 let pizzaProductsArray = [];
-let overallPizzas = [];
+
 let pizzaCheckbox = [];
 let pizzaEditCheckbox = [];
 let pizzaExtraCheckbox = [];
 let pizzaEditExtraCheckbox = [];
+
+renderHtmlElement();
 
 let globalValues;
 let thicknessPrice = {
@@ -57,10 +60,10 @@ function menuListAdd(e) {
   }
 
   overallPizzas.push(orderPizza);
+
+  localStorage.setItem('overallPizzas', JSON.stringify(overallPizzas));
   renderHtmlElement();
 }
-
-
 
 
 function renderHtmlElement() {
@@ -122,9 +125,9 @@ function renderHtmlElement() {
 
 function deleteElement(id) {
   overallPizzas = overallPizzas.filter((item) => {
-    console.log(item.id, id);
     return item.id !== id;
   })
+  localStorage.setItem('overallPizzas', JSON.stringify(overallPizzas));
   renderHtmlElement();
 };
 
@@ -246,7 +249,6 @@ editForm.addEventListener('submit', (e) => {
   e.preventDefault();
   modal.style.display = 'none';
 
-
   let newOrderPizza = {
     id: globalValues.id,
     username: editUsername.value,
@@ -260,8 +262,8 @@ editForm.addEventListener('submit', (e) => {
   }
 
   overallPizzas.splice(globalValues.index, 1, newOrderPizza);
+  localStorage.setItem('overallPizzas', JSON.stringify(overallPizzas));
   renderHtmlElement();
-  console.log(newOrderPizza);
 });
 
 form.addEventListener("submit", menuListAdd);
